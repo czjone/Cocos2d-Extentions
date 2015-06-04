@@ -4,8 +4,8 @@
 
 # Contains
 
-* qq: 3717414579
+* qq: 3717414579 email:czjone@126.com ,371741579@qq.com
 
 # Project QQ Group
 
-* qq gourp:91593285 xse-framework
+* qq gourp:91593285 XSE-FRAMEWORK
