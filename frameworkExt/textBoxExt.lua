@@ -1,0 +1,48 @@
+--------------------------------------------------------
+----@name 数字输入框
+----@create time:[2014-09-09]
+----@modify log: [2014-09-09] [bug:0000] [solyess]
+----@author solyess
+----@des  数字输入框控件
+--local dropBar = dropBar or {}
+--local baseObject = require "class"
+--dropBar,supper = inheritance(dropBar,baseObject)
+--
+-----初始化一个拖动的条子
+----@param #cc.EditorBox textEditor 背景精灵
+--function dropBar:init(textEditor,step,layernamestr,leftfunstr,rightfunstr,max,min)
+--    local step = step or 1
+--
+--    local leftfun = function(sender)
+--        dropBar.value = dropBar.value or 0
+--        dropBar.value = dropBar.value - step
+--        if max and dropBar.value > max then dropBar.value = max end
+--        if min and dropBar.value < min then dropBar.value = min end
+--    end
+--
+--    local rightfun = function(sender)
+--        dropBar.value = dropBar.value or 0
+--        dropBar.value = dropBar.value + step
+--        if max and dropBar.value >max then dropBar.value = max end
+--        if min and dropBar.value <min then dropBar.value = min end
+--    end
+--
+--    self.textEditor = textEditor
+--    assert(self.textEditor,"createa text editor error.")
+--    ---增加，减少按钮
+--    xse.base.addEventSupportA(layernamestr,leftfunstr,leftfun)
+--    xse.base.addEventSupportA(layernamestr,rightfunstr,rightfun)
+--end
+--
+-----当前设置的值
+--function dropBar:getValue()
+--    return dropBar.value
+--end
+--
+-----设置当前的值
+--function dropBar:setValue(num)
+--    dropBar.value = num
+--    textEditor:setText(num)
+--end
+--
+--return dropBar

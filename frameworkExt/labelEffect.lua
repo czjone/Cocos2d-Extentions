@@ -1,0 +1,115 @@
+--
+-----------------------------------------------------------------------------
+--
+----[[ api test
+--local label = xse.labelEffect.init("在上面的一篇文章之中，我们讲解了标签的对齐方式，设\
+--置后，可以固定标签的位置，向固定的方向增加内容，就像是写字一样的。\
+--好的，问题来了，写字的时候，当一行足够填写内容的时候，visibleSize = CCDirector::sharedDirect上面的方法是\
+--OK的；当我们要显示一段文字的时候呢，这时候就需要自动换好多行来 \
+--适应我们的屏幕，来逐行显示。visibleSize = CCDirector::sharedDirect\
+--囿于我们学习时候的经验，很容易认为CCLabelTTvisibleSize = CCDirector::sharedDirectF只能显示单行的文本，但是这是不完全正确的。\
+--我们的一段文本的显示，换行还是需要这个标签来实现。\
+--好的，下面我们先来看下需要使用的api。",600,600,xse.labelEffect.type.printEff)
+--label:setPosition(300,500)
+---- 	label:setString("在上面的一篇文章之中，我们讲解了标签的对齐方式，设置后，可以固定标签的位置，向固定的方向增加内容，就像是写字一样的。\
+---- 好的，问题来了，写字的时候，当一行足够填写内容的时候，visibleSize = CCDirector::sharedDirect上面的方法是OK的；\
+--当我们要显示一段文字的时候呢，这时候就需要自动换好多行来 \
+---- 适应我们的屏幕，来逐行显示。visibleSize = CCDirector::sharedDirect\
+---- 囿于我们学习时候的经验，很容易认为CCLabelTTvisibleSize = CCDirector::sharedDirectF只能显示单行的文本，但是这是不完全正确的。\
+---- 我们的一段文本的显示，换行还是需要这个标签来实现。\
+---- 好的，下面我们先来看下需要使用的api。")
+--label:begin()
+--]]
+--
+--labelEffect =  {}
+--
+--labelEffect.type =  {}
+--labelEffect.type ["printEff"] = 0
+--labelEffect.type ["move"] = 1
+--
+--
+--function labelEffect.utfSub(s, n)
+--    local dropping = string.byte(s, n+1)
+--    if not dropping then return s end
+--    if dropping >= 128 and dropping < 192 then
+--        return labelEffec.utfSub(s, n-1)
+--    end
+--    return string.sub(s, 1, n)
+--end
+--
+--
+-----显示特殊的文字效果
+----@param s string 要显示的字符
+----@param w number 显示区域的宽度
+----@param h number 显示区域的高度
+----@param eff number 效果类型 labelEffect.type
+--function labelEffect.init ( s,w,h,eff )
+--    local label = cc.LabelTTF:create("test message", "Helvetica", 24 ,
+--        cc.size(w, h), cc.TEXT_ALIGNMENT_LEFT)
+--
+--    label.memory =  0
+--
+--    --打印效果
+--    local function printEffect(arg)
+--        label.memory  = label.memory + 1
+--        if s == nil or #s ==0 or label.memory  > #s  then
+--            if label.timeTickId ~=nil then
+--                cc.Director:getInstance():getScheduler():unscheduleScriptEntry(label.timeTickId)
+--                label.memory = 0
+--                label.timeTickId = nil
+--                return
+--            end
+--        end
+--        local str =  labelEffect.utfSub(s,label.memory)
+--        print("info:"..str)
+--        label:setString(str)
+--    end
+--
+--    --移动效果
+--    local function moveEffect(arg)
+--        label.memory  = label.memory + 1
+--        if s == nil or #s ==0 or label.memory  > #s  then
+--            if label.timeTickId ~=nil then
+--                cc.Director:getInstance():getScheduler():unscheduleScriptEntry(label.timeTickId)
+--                label.memory = 0
+--                label.timeTickId = nil
+--                return
+--            end
+--        end
+--        local str =  labelEffect.utfSub(s,label.memory)
+--        log("info:"..str)
+--        label:setString(str)
+--    end
+--
+--    ---是否已显示完成
+--    label.isComplate = function()
+--        return s == nil or #s ==0 or label.memory  > #s
+--    end
+--
+--    ---绑定ttf到目标
+--    function label.bindTTF(ttf)
+--        label = ttf
+--    end
+--
+--    function label.isStart()
+--        return label.timeTickId~= nil
+--    end
+--    
+--    function lable.stop()
+--        cc.Director:getInstance():getScheduler():unscheduleScriptEntry(label.timeTickI)
+--    end
+--
+--    ---开始效果
+--    label.begin = function ()
+--        if label.timeTickId ~=nil then cc.Director:getInstance():getScheduler():unscheduleScriptEntry(label.timeTickId) end
+--        local fun = labelEffect.type.printEff
+--        if eff == nil or eff ==  labelEffect.type.printEff then fun=printEffect
+--        elseif labelEffect.type.moveEffect then fun = moveEffect end
+--        label.timeTickId = cc.Director:getInstance():getScheduler():scheduleScriptFunc(fun, 0, false)
+--        label.memory = 0
+--    end
+--
+--    --	return label
+--end
+--
+--return labelEffect
