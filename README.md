@@ -9,3 +9,7 @@
 # Project QQ Group
 
 * qq gourp:91593285 XSE-FRAMEWORK
+* 
+
+# About technology
+* http://www.cnblogs.com/czjone/
