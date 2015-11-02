@@ -1,9 +1,9 @@
-使用开发工具相关
-     texturePacker 3.0 之后的版本，[未确定当前使用到的版本]
-     cocossudio: 3.0 alpha 5
-     code ide :Build:V1.0.0.RC2
-      cocos2d-x：3.2
-     tolua++-:1.0.92
+#使用开发工具相关
+ *    texturePacker 3.0 之后的版本，[未确定当前使用到的版本]
+ *    cocossudio: 3.0 alpha 5
+ *    code ide :Build:V1.0.0.RC2
+ *     cocos2d-x：3.2
+ *    tolua++-:1.0.92
  
 增加的开源库：
      cjson
