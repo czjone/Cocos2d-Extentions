@@ -7,12 +7,8 @@ Contact us
 
 <!--* Forum: [http://www.baidu.com.org][9]-->
 
+#about us 
 * qq: 3717414579 email:czjone@126.com ,371741579@qq.com
-
-# Project QQ Group
-
 * qq group:91593285 XSE-FRAMEWORK
-
 # author Home Page (About technology)
-
-* http://www.cnblogs.com/czjone/
+*Forum:[http://www.cnblogs.com/czjone/]
