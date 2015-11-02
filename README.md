@@ -10,7 +10,7 @@
 * cocosbuilder 3.0 alpha 5
   
 #cocos2d framework change detail
-  view cocos2d-framework-change.log
+  view cocos2d-framework-change.md
   
 
 Contact us
